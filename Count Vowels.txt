@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class CountVowels {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a statement: ");
+        String statement = input.nextLine();
+        int vowelsCount = 0;
+
+        for (char c : statement.toCharArray()) {
+            if ("aeiouAEIOU".indexOf(c) != -1) {
+                vowelsCount++;
+            }
+        }
+
+        System.out.println("Number of vowels = " + vowelsCount);
+    }
+}

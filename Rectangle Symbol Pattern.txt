@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class RectanglePattern {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the symbol to print: ");
+        char symbol = input.next().charAt(0);
+        int rows = 4, cols = 6; // Assuming a 4x6 rectangle for simplicity
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(symbol + " ");
+            }
+            System.out.println();
+        }
+    }
+}

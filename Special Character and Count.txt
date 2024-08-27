@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class SpecialCharacters {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String s = input.nextLine();
+        int len = s.length();
+        int sp = 0;
+
+        for (int i = 0; i < len; i++) {
+            char ch = s.charAt(i);
+            if (!(Character.isLetterOrDigit(ch))) {
+                sp++;
+                System.out.print(ch);
+            }
+        }
+        System.out.println("\n" + sp);
+    }
+}

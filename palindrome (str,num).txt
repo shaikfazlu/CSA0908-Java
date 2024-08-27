@@ -1,0 +1,53 @@
+import java.util.Scanner;
+public class PalindromeChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Choose an option:");
+        System.out.println("1: Check if a string is a palindrome");
+        System.out.println("2: Check if a number is a palindrome");
+        int choice = scanner.nextInt();
+        switch (choice) {
+            case 1:
+                System.out.println("Enter the string:");
+                String str = scanner.next().toUpperCase();
+                if (isPalindromeString(str)) {
+                    System.out.println("Palindrome");
+                } else {
+                    System.out.println("Not a palindrome");
+                }
+                break;
+            case 2:
+                System.out.println("Enter the number:");
+                int number = scanner.nextInt();
+                if (isPalindromeNumber(number)) {
+                    System.out.println("Palindrome");
+                } else {
+                    System.out.println("Not a palindrome");
+                }
+                break;
+            default:
+                System.out.println("Invalid choice.");
+        }
+
+        scanner.close();
+    }
+    public static boolean isPalindromeString(String str) {
+        int length = str.length();
+        for (int i = 0; i < length / 2; i++) {
+            if (str.charAt(i) != str.charAt(length - 1 - i)) {
+                return false;
+            }
+        }
+        return true;
+    }
+    public static boolean isPalindromeNumber(int num) {
+        int original = num;
+        int reversed = 0;
+        while (num != 0) {
+            int digit = num % 10;
+            reversed = reversed * 10 + digit;
+            num /= 10;
+        }
+        return original == reversed;
+    }
+}

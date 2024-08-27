@@ -1,0 +1,25 @@
+class A {
+    int x;
+    public void A() {
+        x = 10;
+    }
+    public void A(int x) {
+      
+        this.x = x;
+    }
+    public void display() {
+        System.out.println(x);
+    }
+}
+public class B {
+    public static void main(String[] args) {
+
+        A obj = new A();
+
+        obj.A();
+        obj.display(); 
+
+        obj.A(4); 
+        obj.display(); 
+    }
+}
